@@ -8,7 +8,7 @@ public class Main {
     private static final String FILENAME = "resources/property.text/text.properties";
     public static void main(String[] args) {
 
-        System.out.println("1 - eng \n2 - bel \nany - default");
+        System.out.println("1 - bel \n2 - eng \nany - default");
         char i = 0;
         try {
             i = (char)System.in.read();
@@ -26,9 +26,10 @@ public class Main {
             case '2':
                 country = "US";
                 language = "en";
+                break;
         }
         Locale current = new Locale(language, country);
-        ResourceBundle resourceBundle = ResourceBundle.getBundle(FILENAME);
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("text", current);
         String str1 = resourceBundle.getString("str1");
         System.out.println(str1);
         String str2 = resourceBundle.getString("str2");

@@ -1,17 +1,18 @@
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Title</title>
 </head>
-<body>
-
-<br/>
-<form action="hello_servlet" method="post">
-    <input type="text" name="number" value="input number"/>
-    <input type="submit" name="submit_1" value="push"/>
-    <input type="submit" name="submit_2" value="internationalization"/>
-
+<body align="center">
+<h2>SIGN IN!</h2>
+<form action="#" method="post">
+    <label>Input your login</label>
+    <input name="login" placeholder="login" > <br><br>
+    <label>Input your password</label>
+    <input type="password" name="password" placeholder="password" > <br><br>
+    <button type="submit" name="form_auth_submit">Enter</button>
+    <a href="registration.jsp">Registration</a>
 </form>
 </body>
 </html>

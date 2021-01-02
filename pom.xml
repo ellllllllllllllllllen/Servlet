@@ -16,6 +16,12 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.22</version>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -33,6 +39,16 @@
             <artifactId>log4j-api</artifactId>
             <version>2.14.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -41,6 +57,18 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.18.v20190429</version>
+                <configuration>
+                    <httpConnector>
+                        <port>8091</port>
+                    </httpConnector>
+                    <!-- scans your project for any changes to hot swap it to server -->
+                    <scanIntervalSeconds>5</scanIntervalSeconds>
+                </configuration>
             </plugin>
         </plugins>
     </build>

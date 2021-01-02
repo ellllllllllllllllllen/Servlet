@@ -35,11 +35,16 @@ public class HelloServlet extends HttpServlet {
 
         response.setContentType("text/html");
         String strNum = request.getParameter("number");
+        String name = request.getParameter("name");
         String buttonValue = request.getParameter("submit_1");
         buttonValue = buttonValue.toUpperCase(Locale.ROOT);
         if(NumberValidator.isDataValid(strNum)){
             int result = Integer.parseInt(strNum) + 11;
             request.setAttribute("res", result);
+
+            String resultName = "Hello " + name;
+            request.setAttribute("resName", resultName);
+
             request.setAttribute("value", buttonValue);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/main.jsp");
             dispatcher.forward(request, response);
@@ -50,6 +55,7 @@ public class HelloServlet extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/main.jsp");
             dispatcher.forward(request, response);
         }
+
     }
     public void destroy(){
 

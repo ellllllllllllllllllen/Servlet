@@ -19,7 +19,7 @@ public class UserService {
     }
     public static boolean checkEqualsPassword(String inputPassword, String inputConfirmPassword){
         boolean result = false;
-        if(inputPassword == inputConfirmPassword){
+        if(inputPassword.equals(inputConfirmPassword)){
             result = true;
         }
         return result;

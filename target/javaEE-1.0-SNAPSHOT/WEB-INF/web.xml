@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+    <servlet-name>IndexServlet</servlet-name>
+    <servlet-class>edu.epam.servlet.controller.IndexServlet</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>HomeServlet</servlet-name>
+    <servlet-class>edu.epam.servlet.controller.HomeServlet</servlet-class>
+</servlet>
+    <servlet>
+        <servlet-name>RegistrationServlet</servlet-name>
+        <servlet-class>edu.epam.servlet.controller.RegistrationServlet</servlet-class>
+    </servlet>
+<servlet-mapping>
+    <servlet-name>IndexServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>HomeServlet</servlet-name>
+    <url-pattern>/home</url-pattern>
+</servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistrationServlet</servlet-name>
+        <url-pattern>/registration</url-pattern>
+    </servlet-mapping>
+
+</web-app>

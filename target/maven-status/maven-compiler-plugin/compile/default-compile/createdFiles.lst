@@ -1,3 +1,4 @@
+edu/epam/servlet/controller/CreateServlet.class
 edu/epam/servlet/controller/IndexServlet.class
 edu/epam/servlet/dao/Querries.class
 edu/epam/servlet/model/Role.class
@@ -5,5 +6,7 @@ edu/epam/servlet/service/UserService.class
 edu/epam/servlet/model/User.class
 edu/epam/servlet/config/DBConnector.class
 edu/epam/servlet/controller/RegistrationServlet.class
+edu/epam/servlet/dao/BookDAO.class
+edu/epam/servlet/model/Book.class
 edu/epam/servlet/controller/HomeServlet.class
 edu/epam/servlet/dao/UserDAO.class

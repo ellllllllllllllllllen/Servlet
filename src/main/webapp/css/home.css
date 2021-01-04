@@ -1,0 +1,94 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css');
+
+*{
+    font-family: 'Open Sans', 'sans-serif', 'FontAwesome';
+}
+body{
+    background: url(img/background3.jpg);
+    /*background: rgb(52, 56, 61);*/
+    padding: 80px;
+}
+h1{
+    color: #d7a573;
+    /*margin: 200px auto 0;*/
+    position: absolute;
+    top: 120px;
+    left: 40%;
+    font-size: 72px;
+    width: 300px;
+    text-align: center;
+}
+h2{
+    color: #d7a573;
+    position: relative;
+    font-size: 36px;
+    width: 900px;
+    /*text-align: center;*/
+}
+h3{
+    color: #7a5e39;
+    position: relative;
+    font-size: 24px;
+    width: 900px;
+    text-align: center;
+}
+p{
+    font-size: 24px;
+    color: #7a5e39;
+}
+.rect {
+    position: fixed;
+    margin-top: -80px;
+    width: 90%;
+    height: 100%;
+    background: #011A1F;
+    opacity: 100%;
+    z-index: 0;
+    border-bottom: 1px solid;
+}
+.book{
+    position: relative;
+    top: 200px;
+    margin-top: 20px;
+    margin-left: 20%;
+    width: 1000px;
+    /*background: wheat;*/
+    opacity: 70%;
+}
+.plus{
+    position: absolute;
+    top: 195px;
+    left: 1100px;
+}
+.minus{
+    position: absolute;
+    top: 195px;
+    left: 700px;
+}
+
+#home button[type="submit"]{
+    display: block;
+    width: 52px;
+    height: 52px;
+    color: #d7a573;;
+    border-radius: 50px;
+    outline: 0;
+    z-index: 2;
+    border: 6px solid #d7a573;
+    font-size: 30px;
+    text-indent: 0px;
+    text-align: center;
+    z-index: 9999;
+}
+#home button[type="submit"]:hover{
+    color: #d7a573;
+    text-shadow: 0 0 10px #ac7e56;
+    cursor: pointer;
+}
+#home button[type="submit"]{
+    color: #d7a573;
+    background: #011A1F;
+    box-shadow: inset -100px -100px 0 #011A1F; /*Prevent yellow autofill color*/
+
+}

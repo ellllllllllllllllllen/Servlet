@@ -22,11 +22,14 @@ public class IndexServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws IOException {
 
         String inputLogin = request.getParameter("login");
+        String inputRole = request.getParameter("role");
         String inputPassword = request.getParameter("password");
 
         try {
-            if (UserService.checkIfLoginAndPasswordEqual(inputLogin, inputPassword)){
+            if (UserService.checkLoginAndPasswordEqual(inputLogin, inputPassword)){
                 request.getSession().setAttribute("login", inputLogin);
+                request.getSession().setAttribute("role", UserService.findRole(inputLogin, inputPassword));
+                request.getSession().setAttribute("isAuthorized", true);
                 resp.sendRedirect("/home");
             }else {
                 resp.sendRedirect("/index");

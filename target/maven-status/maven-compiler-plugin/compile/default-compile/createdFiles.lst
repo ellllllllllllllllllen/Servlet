@@ -1,7 +1,7 @@
-edu/epam/servlet/controller/CreateServlet.class
 edu/epam/servlet/controller/IndexServlet.class
 edu/epam/servlet/dao/Querries.class
 edu/epam/servlet/model/Role.class
+edu/epam/servlet/controller/AuthorizedFilter.class
 edu/epam/servlet/service/UserService.class
 edu/epam/servlet/model/User.class
 edu/epam/servlet/config/DBConnector.class

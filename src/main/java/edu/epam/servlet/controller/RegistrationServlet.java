@@ -29,20 +29,21 @@ public class RegistrationServlet extends HttpServlet {
         String inputLogin = request.getParameter("login");
         String inputPassword = request.getParameter("password");
         String inputConfirmPassword = request.getParameter("confirm_password");
-
-        if(UserService.checkEqualsPassword(inputPassword, inputConfirmPassword)) {
-            try {
-                UserDAO.addUser(inputLogin, inputPassword);
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+        request.setAttribute("LoginIsNotUnique", request.getSession().getAttribute("LoginIsNotUnique"));
+        try {
+            if(UserService.isLoginUnique(inputLogin)) {
+                if (UserService.checkEqualsPassword(inputPassword, inputConfirmPassword)) {
+                    UserDAO.addUser(inputLogin, inputPassword);
+                    resp.sendRedirect("/index");
+                } else {
+                    resp.sendRedirect("/registration");
+                }
+            }else {
+                request.getSession().setAttribute("LoginIsNotUnique", false);
+                resp.sendRedirect("/registration");
             }
-
-            //request.getSession().setAttribute("login", inputLogin);
-            resp.sendRedirect("/index");
-        }else {
-            System.out.println("AAAAAAAAAAAAAAAAAAAAAAA");
-            resp.sendRedirect("/registration");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
-
     }
 }

@@ -20,9 +20,10 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
         HttpSession session = request.getSession();
         request.setAttribute("title", session.getAttribute("title"));
+        request.setAttribute("login", session.getAttribute("login"));
+        request.setAttribute("role", session.getAttribute("role"));
 
         try {
             request.setAttribute("books", BookDAO.getAllBooks());
@@ -34,10 +35,6 @@ public class HomeServlet extends HttpServlet {
         view.forward(request, response);
 
     }
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws IOException {
 
-
-    }
 
 }

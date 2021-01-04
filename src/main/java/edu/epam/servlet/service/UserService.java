@@ -1,7 +1,7 @@
 package edu.epam.servlet.service;
 
 import edu.epam.servlet.dao.UserDAO;
-import edu.epam.servlet.model.User;
+import edu.epam.servlet.entity.User;
 
 import java.sql.SQLException;
 import java.util.List;

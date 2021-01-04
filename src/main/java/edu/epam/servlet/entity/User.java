@@ -1,4 +1,4 @@
-package edu.epam.servlet.model;
+package edu.epam.servlet.entity;
 
 public class User {
     private int id;

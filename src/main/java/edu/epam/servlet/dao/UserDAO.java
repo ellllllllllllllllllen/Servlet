@@ -1,7 +1,7 @@
 package edu.epam.servlet.dao;
 
-import edu.epam.servlet.model.Role;
-import edu.epam.servlet.model.User;
+import edu.epam.servlet.entity.Role;
+import edu.epam.servlet.entity.User;
 
 import java.sql.*;
 import java.util.ArrayList;

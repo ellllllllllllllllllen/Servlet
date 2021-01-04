@@ -1,4 +1,4 @@
-package edu.epam.servlet.model;
+package edu.epam.servlet.entity;
 
 public class Book {
     private int id;

@@ -1,9 +1,6 @@
 package edu.epam.servlet.config;
 
-import edu.epam.servlet.model.Book;
-
 import java.sql.*;
-import java.util.ArrayList;
 
 public class DBConnector {
     public static final String URL = "jdbc:mysql://localhost:3306/javaee";

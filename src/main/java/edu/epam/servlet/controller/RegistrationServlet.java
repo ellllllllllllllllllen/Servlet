@@ -1,13 +1,11 @@
 package edu.epam.servlet.controller;
 
 import edu.epam.servlet.dao.UserDAO;
-import edu.epam.servlet.model.User;
 import edu.epam.servlet.service.UserService;
 import lombok.SneakyThrows;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

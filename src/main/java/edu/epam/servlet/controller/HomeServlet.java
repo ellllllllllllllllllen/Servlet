@@ -1,9 +1,7 @@
 package edu.epam.servlet.controller;
 
 
-import edu.epam.servlet.config.DBConnector;
 import edu.epam.servlet.dao.BookDAO;
-import edu.epam.servlet.model.Book;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

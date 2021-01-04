@@ -1,8 +1,6 @@
 package edu.epam.servlet.dao;
 
-import edu.epam.servlet.model.Book;
-import edu.epam.servlet.model.Role;
-import edu.epam.servlet.model.User;
+import edu.epam.servlet.entity.Book;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

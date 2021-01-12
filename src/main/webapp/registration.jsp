@@ -28,6 +28,7 @@
         <input type="password" name="confirm_password" placeholder="confirm password">
 
         <button type="submit">&#xf0da;</button>
+    <p>do you have account? <a href="index">click here</a></p>
     </form>
 
 

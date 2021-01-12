@@ -137,3 +137,17 @@ h1{
 #signin p > a:hover{
     border-bottom: 1px solid;
 }
+#signin p {
+    color: #d7a573;;
+    padding: 0 20px;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 5px 0 0 0;
+}
+#signin p > a{
+    color: #ac7e56;
+    text-decoration: none;
+}
+#signin p > a:hover{
+    border-bottom: 1px solid;
+}

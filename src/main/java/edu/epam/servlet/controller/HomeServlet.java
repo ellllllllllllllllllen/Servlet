@@ -23,6 +23,11 @@ public class HomeServlet extends HttpServlet {
         request.setAttribute("login", session.getAttribute("login"));
         request.setAttribute("role", session.getAttribute("role"));
 
+
+
+
+
+
         try {
             request.setAttribute("books", BookDAO.getAllBooks());
         } catch (SQLException throwables) {

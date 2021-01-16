@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-<%--    <link href="/css/login.css" rel="stylesheet" media="screen" type="text/css"/>--%>
     <style>
         <%@ include file="/css/login.css" %>
     </style>
 
 </head>
-<body align="center">
+<body>
 
 <div class="rect2">
 </div>
@@ -29,5 +28,4 @@
 
 
 </body>
-<script src="js/login.js"></script>
 </html>

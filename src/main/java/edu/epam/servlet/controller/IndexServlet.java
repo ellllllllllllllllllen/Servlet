@@ -1,5 +1,6 @@
 package edu.epam.servlet.controller;
 
+import edu.epam.servlet.exception.DaoException;
 import edu.epam.servlet.service.UserService;
 
 import javax.servlet.RequestDispatcher;
@@ -13,29 +14,28 @@ import java.sql.SQLException;
 public class IndexServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher view = req.getRequestDispatcher("/index.jsp");
-        view.forward(req, resp);
+        view.forward(req, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        String inputLogin = request.getParameter("login");
-        String inputRole = request.getParameter("role");
-        String inputPassword = request.getParameter("password");
+        String login = request.getParameter("login");
+        String password = request.getParameter("password");
 
         try {
-            if (UserService.checkLoginAndPasswordEqual(inputLogin, inputPassword)){
-                request.getSession().setAttribute("login", inputLogin);
-                request.getSession().setAttribute("role", UserService.findRole(inputLogin, inputPassword));
+            if (UserService.isUserExists(login, password)){
+                request.getSession().setAttribute("login", login);
+                request.getSession().setAttribute("role", UserService.findRole(login, password));
                 request.getSession().setAttribute("isAuthorized", true);
-                resp.sendRedirect("/home");
+                response.sendRedirect("/home");
             }else {
-                resp.sendRedirect("/index");
+                response.sendRedirect("/index");
 
             }
-        } catch (SQLException throwables) {
+        } catch (SQLException | DaoException throwables) {
             throwables.printStackTrace();
         }
 

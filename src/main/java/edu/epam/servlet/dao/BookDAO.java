@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static edu.epam.servlet.config.DBConnector.getConnection;
-import static edu.epam.servlet.dao.Querries.ADD_BOOK;
-import static edu.epam.servlet.dao.Querries.DELETE_BOOK;
-import static edu.epam.servlet.dao.Querries.SELECT_ALL_BOOKS;
+import static edu.epam.servlet.dao.Queries.ADD_BOOK;
+import static edu.epam.servlet.dao.Queries.DELETE_BOOK;
+import static edu.epam.servlet.dao.Queries.SELECT_ALL_BOOKS;
 
 public class BookDAO {
     public static List<Book> getAllBooks() throws SQLException {

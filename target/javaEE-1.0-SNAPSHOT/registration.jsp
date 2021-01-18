@@ -19,6 +19,9 @@
 <div id="wrapper">
     <form id="signup" action="#" method="post" >
         <input type="text" id="user" name="login" placeholder="login">
+        <input type="text" id="firstname" name="firstname" placeholder="firstname">
+        <input type="text" id="lastname" name="lastname" placeholder="lastname">
+        <input type="text" id="email" name="email" placeholder="email">
         <input type="password"  name="password" placeholder="password">
         <input type="password" name="confirm_password" placeholder="confirm password">
         <button type="submit">&#xf0da;</button>

@@ -1,23 +1,19 @@
 package edu.epam.servlet.dao.impl;
 
 import edu.epam.servlet.connection.ConnectionPool;
-import edu.epam.servlet.dao.Querries;
 import edu.epam.servlet.dao.UserDao;
-import edu.epam.servlet.entity.Role;
 import edu.epam.servlet.entity.User;
 import edu.epam.servlet.exception.DaoException;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import static edu.epam.servlet.config.DBConnector.getConnection;
-import static edu.epam.servlet.dao.Querries.ADD_USER;
-import static edu.epam.servlet.dao.Querries.SELECT_ALL_USERS;
+import static edu.epam.servlet.dao.Queries.*;
 
 public class UserDaoImpl implements UserDao {
-    private static UserDaoImpl instance = new UserDaoImpl();
+    private static final UserDaoImpl instance = new UserDaoImpl();
 
     private UserDaoImpl(){
 
@@ -55,7 +51,6 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean addUser(User user, String password) throws SQLException {
-
         boolean update;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement statement = connection.prepareStatement(ADD_USER);
@@ -66,8 +61,15 @@ public class UserDaoImpl implements UserDao {
         statement.setString(5, user.getEmail());
         update = statement.executeUpdate() > 0;
         return update;
-
     }
 
-
+    @Override
+    public boolean setAdminRole(User user) throws DaoException, SQLException {
+        boolean update;
+        Connection connection = ConnectionPool.INSTANCE.getConnection();
+        PreparedStatement statement = connection.prepareStatement(SET_ADMIN_ROLE);
+        statement.setString(1, user.getLogin());
+        update = statement.executeUpdate() > 0;
+        return update;
+    }
 }

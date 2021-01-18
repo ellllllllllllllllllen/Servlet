@@ -3,6 +3,9 @@ package edu.epam.servlet.controller;
 import edu.epam.servlet.exception.DaoException;
 import edu.epam.servlet.service.UserService;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +15,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class IndexServlet extends HttpServlet {
+    private static final Logger Logger = LogManager.getLogger();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
@@ -26,17 +30,20 @@ public class IndexServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         try {
-            if (UserService.isUserExists(login, password)){
+            if (UserService.isUserExists(login)){
                 request.getSession().setAttribute("login", login);
-                request.getSession().setAttribute("role", UserService.findRole(login, password));
+                request.getSession().setAttribute("role", UserService.findRole(login));
                 request.getSession().setAttribute("isAuthorized", true);
+                Logger.error("User exists");
                 response.sendRedirect("/home");
             }else {
+                Logger.error("User doesn't exist");
                 response.sendRedirect("/index");
-
             }
-        } catch (SQLException | DaoException throwables) {
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
+        } catch (DaoException e) {
+            e.printStackTrace();
         }
 
 

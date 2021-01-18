@@ -6,15 +6,17 @@ public class User {
     private String firstname;
     private String lastname;
     private String email;
+    private Role role;
 
     public User(){}
 
-    public User(String login, String firstname, String lastname, String email) {
+    public User(String login, String firstname, String lastname, String email, Role role) {
 
         this.login = login;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
+        this.role = role;
     }
 
 
@@ -50,4 +52,11 @@ public class User {
         this.email = email;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
 }

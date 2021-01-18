@@ -1,5 +1,6 @@
 package edu.epam.servlet.controller;
 
+import edu.epam.servlet.entity.Role;
 import edu.epam.servlet.entity.User;
 import edu.epam.servlet.exception.DaoException;
 import edu.epam.servlet.service.UserService;
@@ -31,8 +32,9 @@ public class RegistrationServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirm_password");
+        Role defaultRole = Role.USER;
 
-        User user = new User(login, firstname, lastname, email);
+        User user = new User(login, firstname, lastname, email, defaultRole);
         try {
             if (UserService.isLoginUnique(login)) {
                 if (UserService.checkConfirmationPassword(password, confirmPassword)) {

@@ -12,4 +12,6 @@ public interface UserDao {
 
     boolean addUser(User user, String password) throws DaoException, SQLException;
 
+    boolean setAdminRole(User user) throws DaoException, SQLException;
+
 }

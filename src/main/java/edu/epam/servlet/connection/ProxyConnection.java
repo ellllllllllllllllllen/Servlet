@@ -54,7 +54,7 @@ public class ProxyConnection implements Connection {
 
     @Override
     public void close() throws SQLException {
-        by.epam.project.model.connection.ConnectionPool.INSTANCE.releaseConnection(this);
+        ConnectionPool.INSTANCE.releaseConnection(this);
     }
 
     void reallyClose() throws SQLException {
